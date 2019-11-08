@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<div>
+<p><a href="{{ url_for('index')}}"> Home </a></p>
+  <h3>{{ legend }}</h3>
+
+
+{% if form %}
+  <form method="POST">
+
+    {{ form.csrf_token }}
+
+    {{ form.name.label }} {{ form.name }}
+    {{ form.type.label }} {{ form.type }}
+
+    <input type="submit" formaction="{{url_for('update_pokemon', pokemonID=form.pokemonID)}}" value="Update">
+    <input type="submit" formaction="{{url_for('delete_pokemon', pokemonID=form.pokemonID)}}" value="Delete">
+
+
+
+  </form>
+{% endif %}
+</div>
+{% endblock %}
