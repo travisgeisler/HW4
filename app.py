@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_
 import pymysql
-import secrets
+#import secrets
 import os
 
 dbuser = os.environ.get('DBUSER')
