@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+<div>
+
+    <h3> Add a New Pokemon </h3>
+    <hr />
+    <form method="POST" action="">
+        
+        {{ form.csrf_token }}
+        {{ form.pokemonID.label }} {{ form.pokemonID(size=5, readonly=true) }}
+        {{ form.name.label }} {{ form.name(size=20) }}
+        {{ form.type.label }} {{ form.type(size=20) }}
+
+        <input type="submit" value="Save">
+
+    </form>
+</div>
+{% endblock %}
